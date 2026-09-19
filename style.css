@@ -1,0 +1,740 @@
+/* ============================================
+     SELECTION & SCROLLBAR
+     ============================================ */
+
+::selection {
+    background: var(--violet_border);
+    color: var(--white_primary);
+}
+
+::-moz-selection {
+    background: var(--violet_border);
+    color: var(--white_primary);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--violet_border) var(--midnight_primary);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--midnight_primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--violet_border);
+    border-radius: 999px;
+    border: 3px solid var(--midnight_primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--violet_shadow);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--midnight_primary);
+}
+
+body {
+    margin: 0;
+    font-family: "Baloo 2", sans-serif;
+    background: var(--midnight_primary);
+    overflow-x: hidden;
+}
+
+img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: clamp(24px, 6vw, 64px) clamp(16px, 5vw, 48px);
+}
+
+.bup:active {
+    transform: translateY(3px);
+}
+
+/* ============================================
+     HERO
+     ============================================ */
+
+.hero {
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 36px);
+    padding-top: clamp(48px, 8vw, 88px);
+}
+
+.hero_bg_wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    height: 650px;
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.hero_bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/Backgrounds/Hero_Background.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) saturate(1.1);
+    transform: scale(1.08);
+}
+
+.hero_panel {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--panel-max-width);
+    background: var(--violet_primary);
+    border: clamp(4px, 0.8vw, var(--border_size_big)) solid var(--violet_border);
+    border-radius: clamp(20px, 3vw, 40px);
+    padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 48px);
+    text-align: center;
+    box-shadow: 0 var(--shadow_size_big) 0 var(--violet_shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero_avatar {
+    width: clamp(120px, 18vw, 170px);
+    height: clamp(120px, 18vw, 170px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--violet_border);
+    box-shadow: 0 5px 0 var(--violet_shadow);
+    display: block;
+    margin: 0 auto clamp(16px, 3vw, 24px);
+}
+
+.hero_title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    color: var(--violet_text);
+    margin: 0 0 clamp(14px, 2.5vw, 20px);
+}
+
+.hero_tagline {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--violet_shadow);
+    margin: 0 0 clamp(20px, 4vw, 32px);
+    max-width: 560px;
+}
+
+.hero_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2.5vw, 20px);
+    justify-content: center;
+    margin-bottom: clamp(20px, 4vw, 32px);
+}
+
+.hero_socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2.2vw, 18px);
+}
+
+.hero_social_link {
+    display: block;
+}
+
+.hero_social_icon {
+    width: clamp(32px, 4.2vw, 40px);
+    height: clamp(32px, 4.2vw, 40px);
+    display: block;
+    object-fit: contain;
+    border-radius: clamp(8px, 1.6vw, 12px);
+}
+
+@media (max-width: 640px) {
+    .hero_panel {
+        padding: 32px 20px;
+    }
+
+    .hero_bg_wrap {
+        height: auto;
+    }
+}
+
+/* ============================================
+     SECTION TITLES
+     ============================================ */
+
+.section_title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    color: var(--violet_primary);
+    text-align: center;
+}
+
+/* ============================================
+     GAMES
+     ============================================ */
+
+.games {
+    flex-direction: column;
+    gap: clamp(28px, 4.5vw, 44px);
+}
+
+.games_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(18px, 3vw, 28px);
+    width: 100%;
+    max-width: var(--divider_width);
+    margin: 0 auto;
+}
+
+.game_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 260px;
+    max-width: 320px;
+    text-decoration: none;
+    border-radius: clamp(18px, 2.5vw, 28px);
+    overflow: hidden;
+    background: var(--white_primary);
+    border: clamp(4px, 0.8vw, var(--border_size_med)) solid var(--card_border, var(--violet_border));
+    box-shadow: 0 var(--shadow_size_med) 0 var(--card_shadow, var(--violet_shadow));
+}
+
+.game_card:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--card_shadow, var(--violet_shadow));
+}
+
+.game_card_violet {
+    --card_border: var(--violet_border);
+    --card_shadow: var(--violet_shadow);
+    --card_bg: var(--violet_primary);
+    --card_text: var(--violet_text);
+}
+
+.game_card_purple {
+    --card_border: var(--purple_border);
+    --card_shadow: var(--purple_shadow);
+    --card_bg: var(--purple_primary);
+    --card_text: var(--white_primary);
+}
+
+.game_card_yellow {
+    --card_border: var(--yellow_border);
+    --card_shadow: var(--yellow_shadow);
+    --card_bg: var(--yellow_primary);
+    --card_text: var(--yellow_text);
+}
+
+.game_card_pink {
+    --card_border: var(--pink_border);
+    --card_shadow: var(--pink_shadow);
+    --card_bg: var(--pink_primary);
+    --card_text: var(--pink_text);
+}
+
+.game_card_midnight {
+    --card_border: var(--midnight_border);
+    --card_shadow: var(--midnight_shadow);
+    --card_bg: var(--midnight_primary);
+    --card_text: var(--white_primary);
+}
+
+/* varianti prese dal sito di reference: solo per i giochi veri,
+   cosi' ogni card tiene il colore della sua lineup */
+.game_card_green {
+    --card_border: var(--green_border);
+    --card_shadow: var(--green_shadow);
+    --card_bg: var(--green_primary);
+    --card_text: var(--green_text);
+}
+
+.game_card_orange {
+    --card_border: var(--orange_border);
+    --card_shadow: var(--orange_shadow);
+    --card_bg: var(--orange_primary);
+    --card_text: var(--orange_text);
+}
+
+.game_card_rose {
+    --card_border: var(--rose_border);
+    --card_shadow: var(--rose_shadow);
+    --card_bg: var(--rose_primary);
+    --card_text: var(--rose_text);
+}
+
+.game_card_banner {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--card_border, var(--violet_border));
+}
+
+.game_card_body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: clamp(14px, 2.5vw, 20px) clamp(16px, 2.8vw, 22px);
+    flex: 1;
+    background: var(--card_bg, var(--white_primary));
+}
+
+.game_card_title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--card_text, var(--white_text));
+}
+
+.game_card_subtitle {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    color: var(--card_text, var(--white_shadow));
+    opacity: 0.8;
+}
+
+.game_card_badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--white_primary);
+    background: rgba(16, 0, 22, 0.6);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* ============================================
+     VIDEO
+     ============================================ */
+
+.video {
+    flex-direction: column;
+    gap: clamp(28px, 4.5vw, 44px);
+}
+
+.video_panel {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--panel-max-width);
+    background-image: url("assets/Backgrounds/Tiled_Background.png");
+    background-size: 130px;
+    background-repeat: repeat;
+    border: clamp(4px, 0.8vw, var(--border_size_big)) solid var(--violet_border);
+    border-radius: clamp(20px, 3vw, 40px);
+    padding: clamp(18px, 3vw, 28px);
+    box-shadow: 0 var(--shadow_size_big) 0 var(--violet_shadow);
+}
+
+.video_frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: clamp(14px, 2vw, 24px);
+    overflow: hidden;
+    border: 5px solid var(--white_primary);
+}
+
+.video_frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ============================================
+     MORE
+     ============================================ */
+
+.more {
+    flex-direction: column;
+    gap: clamp(28px, 4.5vw, 44px);
+}
+
+.more_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(18px, 3vw, 28px);
+    width: 100%;
+    max-width: var(--divider_width);
+    margin: 0 auto;
+}
+
+.more_grid .game_card {
+    flex: 1 1 260px;
+}
+
+/* ============================================
+     BACK LINK (pagine secondarie)
+     ============================================ */
+
+.back_link {
+    display: inline-block;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    color: var(--violet_shadow);
+    text-decoration: none;
+    margin: 0 auto clamp(16px, 3vw, 24px);
+}
+
+.back_link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+     CONTACT
+     ============================================ */
+
+.contact {
+    flex-direction: column;
+    gap: clamp(28px, 4.5vw, 44px);
+}
+
+.contact_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(18px, 3vw, 28px);
+    width: 100%;
+    max-width: var(--panel-max-width);
+    margin: 0 auto;
+}
+
+.contact_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 1.2vw, 10px);
+    flex: 1 1 220px;
+    max-width: 280px;
+    text-decoration: none;
+    border-radius: clamp(18px, 2.5vw, 28px);
+    padding: clamp(24px, 4vw, 36px) clamp(18px, 3vw, 28px);
+    text-align: center;
+    background: var(--card_bg, var(--violet_primary));
+    border: clamp(4px, 0.8vw, var(--border_size_med)) solid var(--card_border, var(--violet_border));
+    box-shadow: 0 var(--shadow_size_med) 0 var(--card_shadow, var(--violet_shadow));
+    color: var(--card_text, var(--violet_text));
+}
+
+.contact_card:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--card_shadow, var(--violet_shadow));
+}
+
+.contact_card_violet {
+    --card_bg: var(--violet_primary);
+    --card_border: var(--violet_border);
+    --card_shadow: var(--violet_shadow);
+    --card_text: var(--violet_text);
+}
+
+.contact_card_purple {
+    --card_bg: var(--purple_primary);
+    --card_border: var(--purple_border);
+    --card_shadow: var(--purple_shadow);
+    --card_text: var(--white_primary);
+}
+
+.contact_card_icon {
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    line-height: 1;
+}
+
+.contact_card_label {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1rem, 1.9vw, 1.15rem);
+}
+
+.contact_card_value {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    opacity: 0.85;
+    word-break: break-word;
+}
+
+/* ============================================
+     FOOTER
+     ============================================ */
+
+.footer {
+    background: var(--footer_primary_);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(6px, 1.2vw, 10px);
+    padding: clamp(24px, 4vw, 40px) clamp(16px, 5vw, 48px);
+    text-align: center;
+}
+
+.footer_main {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.7vw, 1.15rem);
+    color: var(--footer_text);
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding-bottom: 110px;
+        /* spazio per il widget Ko-fi */
+    }
+}
+
+/* ============================================
+     BUTTONS
+     ============================================ */
+
+.btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: clamp(1rem, 1.9vw, 1.3rem);
+    line-height: 1;
+    padding: clamp(10px, 2vw, 10px) clamp(24px, 4vw, 40px);
+    border-radius: 999px;
+    transition: transform 0.08s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:active {
+    transform: translateY(3px);
+}
+
+.btn_yellow {
+    background: var(--yellow_primary);
+    color: var(--yellow_text);
+    border: 5px solid var(--yellow_border);
+    box-shadow: 0 var(--btm_shadow_size) 0 var(--yellow_shadow);
+}
+
+.btn_yellow:active {
+    box-shadow: 0 2px 0 var(--yellow_shadow);
+}
+
+.btn_purple {
+    background: var(--purple_primary);
+    color: var(--white_primary);
+    border: 5px solid var(--purple_border);
+    box-shadow: 0 var(--btm_shadow_size) 0 var(--purple_shadow);
+}
+
+.btn_purple:active {
+    box-shadow: 0 2px 0 var(--purple_shadow);
+}
+
+.btn_violet {
+    background: var(--violet_primary);
+    color: var(--violet_text);
+    border: 5px solid var(--violet_border);
+    box-shadow: 0 var(--btm_shadow_size) 0 var(--violet_shadow);
+}
+
+.btn_violet:active {
+    box-shadow: 0 2px 0 var(--violet_shadow);
+}
+
+.btn_pink {
+    background: var(--pink_primary);
+    color: var(--white_primary);
+    border: 5px solid var(--pink_border);
+    box-shadow: 0 var(--btm_shadow_size) 0 var(--pink_shadow);
+}
+
+.btn_pink:active {
+    box-shadow: 0 2px 0 var(--pink_shadow);
+}
+
+/* ============================================
+     OC CODES
+     ============================================ */
+
+.codes {
+    flex-direction: column;
+    gap: clamp(28px, 4.5vw, 44px);
+}
+
+.codes_grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 3.5vw, 32px);
+    width: 100%;
+    max-width: var(--panel-max-width);
+    margin: 0 auto;
+}
+
+.code_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 2vw, 16px);
+    width: 100%;
+    text-align: center;
+    border-radius: clamp(18px, 2.5vw, 28px);
+    padding: clamp(22px, 3.5vw, 32px) clamp(18px, 3vw, 28px);
+    background: var(--card_bg, var(--violet_primary));
+    border: clamp(4px, 0.8vw, var(--border_size_med)) solid var(--card_border, var(--violet_border));
+    box-shadow: 0 var(--shadow_size_med) 0 var(--card_shadow, var(--violet_shadow));
+    color: var(--card_text, var(--violet_text));
+}
+
+.code_card_violet {
+    --card_bg: var(--violet_primary);
+    --card_border: var(--violet_border);
+    --card_shadow: var(--violet_shadow);
+    --card_text: var(--violet_text);
+}
+
+.code_card_yellow {
+    --card_bg: var(--yellow_primary);
+    --card_border: var(--yellow_border);
+    --card_shadow: var(--yellow_shadow);
+    --card_text: var(--yellow_text);
+}
+
+.code_card_pink {
+    --card_bg: var(--pink_primary);
+    --card_border: var(--pink_border);
+    --card_shadow: var(--pink_shadow);
+    --card_text: var(--white_primary);
+}
+
+.code_card_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 14px);
+}
+
+.code_card_icon {
+    width: clamp(40px, 6vw, 52px);
+    height: clamp(40px, 6vw, 52px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--card_border, var(--violet_border));
+    display: block;
+}
+
+.code_card_title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.code_card_box {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Courier New", monospace;
+    font-size: clamp(0.72rem, 1.3vw, 0.85rem);
+    line-height: 1.45;
+    text-align: left;
+    color: var(--white_text);
+    background: var(--white_primary);
+    border: 3px solid var(--card_border, var(--violet_border));
+    border-radius: clamp(10px, 1.5vw, 16px);
+    padding: clamp(10px, 2vw, 14px);
+    resize: vertical;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.code_card_copy {
+    align-self: center;
+    min-width: 140px;
+}
+
+/* ============================================
+     DIVIDER
+     ============================================ */
+
+.divider {
+    --divider_thick: clamp(4px, 0.9vw, 5px);
+    --divider_sparkle_size: clamp(26px, 4.5vw, 34px);
+    --divider_overlap: calc(var(--divider_sparkle_size) * 0.55);
+
+    display: flex;
+    align-items: center;
+    max-width: var(--divider_width);
+    margin: clamp(28px, 6vw, 56px) auto;
+    padding: 0 clamp(20px, 5vw, 48px);
+    color: var(--violet_primary);
+}
+
+.divider_line {
+    flex: 1;
+    position: relative;
+    z-index: 0;
+    height: var(--divider_thick);
+    background: currentColor;
+    border-radius: 999px;
+    margin: 0 calc(-1 * var(--divider_overlap));
+}
+
+.divider_sparkle {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    width: var(--divider_sparkle_size);
+    height: var(--divider_sparkle_size);
+    fill: currentColor;
+    transform: rotate(90deg);
+}

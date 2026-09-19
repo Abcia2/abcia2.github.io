@@ -1,0 +1,75 @@
+:root {
+    /* ============================================
+         Palette "Nightsky Sparkle" — palette Abcia2
+         Struttura come vars.css di Gacha Story: ogni
+         colore = primary / border / shadow / text.
+         ============================================ */
+
+    --violet_primary: #C9BFE3;
+    --violet_border: #8F7CC2;
+    --violet_shadow: #4E3594;
+    --violet_text: #211346;
+
+    --purple_primary: #7D52A1;
+    --purple_border: #522C73;
+    --purple_shadow: #391558;
+    --purple_text: #210539;
+
+    --midnight_primary: #2E053D;
+    --midnight_border: #1D0228;
+    --midnight_shadow: #100016;
+    --midnight_text: #060009;
+
+    --yellow_primary: #FFE18A;
+    --yellow_border: #F1BB5D;
+    --yellow_shadow: #C4673C;
+    --yellow_text: #7A2605;
+
+    --pink_primary: #CD55B0;
+    --pink_border: #892470;
+    --pink_shadow: #652355;
+    --pink_text: #380C31;
+
+    --white_primary: #F0F0F0;
+    --white_border: #A5A5A5;
+    --white_shadow: #4F4F4F;
+    --white_text: #202020;
+
+    /* --------------------------------------------
+         Colori presi direttamente dal sito di reference
+         (Gacha Story), usati SOLO per le card dei giochi
+         veri, cosi' ogni gioco tiene il colore della sua
+         lineup invece del brand personale di Abcia2.
+         -------------------------------------------- */
+
+    --green_primary: #AEEE77;
+    --green_border: #67A334;
+    --green_shadow: #4D7A27;
+    --green_text: #1A3205;
+
+    --orange_primary: #FFB75F;
+    --orange_border: #BE7318;
+    --orange_shadow: #784200;
+    --orange_text: #3B2000;
+
+    --rose_primary: #E893BB;
+    --rose_border: #B53989;
+    --rose_shadow: #922269;
+    --rose_text: #590C3D;
+
+    --footer_primary_: #100016;
+    --footer_text: #C9BFE3;
+
+    /* dimensioni layout, uguali a tutta la lineup */
+    --panel-max-width: 900px;
+    --divider_width: 1300px;
+
+    --border_size_big: 11px;
+    --shadow_size_big: 8px;
+
+    --border_size_med: 8px;
+    --shadow_size_med: 6px;
+
+    --btn_border_size: 5px;
+    --btm_shadow_size: 4px;
+}

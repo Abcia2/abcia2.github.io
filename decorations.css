@@ -1,0 +1,69 @@
+/* ============================================
+     Decorazioni pure — nessuna logica di layout qui,
+     solo stelline sparse. Pattern "frame di ancoraggio":
+     ogni gruppo di decorazioni è nestato dentro un
+     contenitore che ha lo stesso max-width dell'elemento
+     che deve decorare (qui: .hero_panel stesso, che ha
+     già position:relative + max-width: var(--panel-max-width)).
+     ============================================ */
+
+.hero_deco {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    height: auto;
+    z-index: 3;
+}
+
+.hero_sparkle_1 {
+    top: -8%;
+    left: -4%;
+    width: clamp(26px, 8%, 60px);
+    transform: rotate(-10deg);
+}
+
+.hero_sparkle_2 {
+    top: 6%;
+    right: -5%;
+    width: clamp(20px, 6%, 46px);
+    transform: rotate(12deg);
+}
+
+.hero_sparkle_3 {
+    bottom: -6%;
+    left: 4%;
+    width: clamp(18px, 5.5%, 40px);
+    transform: rotate(20deg);
+}
+
+.hero_sparkle_4 {
+    bottom: -10%;
+    right: 6%;
+    width: clamp(28px, 8.5%, 64px);
+    transform: rotate(-16deg);
+}
+
+@media (max-width: 640px) {
+    .hero_sparkle_1 {
+        top: -5%;
+        left: -3%;
+        width: 34px;
+    }
+
+    .hero_sparkle_2 {
+        top: 3%;
+        right: -3%;
+        width: 26px;
+    }
+
+    .hero_sparkle_3 {
+        display: none;
+    }
+
+    .hero_sparkle_4 {
+        bottom: -6%;
+        right: 3%;
+        width: 34px;
+    }
+}
