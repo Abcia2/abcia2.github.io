@@ -1,0 +1,828 @@
+/*Setup*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+* {
+    transition: all 0.3s ease-in;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d46d7c62;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3204562;
+}
+
+.FadeInLayer {
+    transition: all 0.5s ease-in;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #5A2B33;
+    opacity: 100%;
+    z-index: 10;
+}
+
+/*Body*/
+body {
+    font-family: "Quicksand", Bold;
+    background-color: #72424a;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: #1f060b;
+    background-color: #cb849586;
+}
+
+::selection {
+    color: #1f060b;
+    background-color: #cb849586;
+}
+
+.CasualGamesBG {
+    background-image: url(./Assets/Background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+}
+
+/*Animations*/
+@keyframes RollIn {
+    0% {
+        scale: 1.1;
+        transform: rotate(150deg);
+    }
+
+    100% {
+        scale: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ZoomIn {
+    0% {
+        scale: 0.8;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+/*Header and Footer*/
+.Header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.Footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+
+/*Content Card*/
+.CentredContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CardButtons {
+    display: flex;
+    width: 60%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.RollInAnimation {
+    animation: RollIn 1s ease-out 1;
+    transform-origin: center center;
+}
+
+.ZoomInAnimation {
+    animation: ZoomIn 1s ease-out 1;
+    transform-origin: center center;
+}
+
+.GameLogoImage {
+    width: 40%;
+    height: auto;
+}
+
+.SocialButtons a img {
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+@media (orientation : landscape) {
+    .SocialButtons a img {
+        height: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.RaibowBorder {
+    position: relative;
+    background-color: white;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+    border-radius: 30px;
+    width: 70%;
+}
+
+.RaibowBorder::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background-image: linear-gradient(to right bottom, #72424a, #6c3c44, #66363e, #603139, #5a2b33);
+    border-radius: 30px;
+}
+
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(to left bottom, #fff3f9, #fceaf3, #f9e1ed, #f6d8e7, #f3cfe1);
+    border-radius: 25px;
+    height: 100%;
+}
+
+
+.HomaShortText {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.HomeMediumText {
+    width: 90%;
+    margin: 10px 0;
+}
+
+.AboutMeButton {
+    width: 25%;
+}
+
+.CardsRowCon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+}
+
+@media (orientation : portrait) {
+    .RaibowBorder {
+        position: relative;
+        background-color: white;
+        background-clip: padding-box;
+        border: 5px solid transparent;
+        border-radius: 30px;
+        width: 95%;
+    }
+    
+    .RaibowBorder::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        z-index: -1;
+        background-image: linear-gradient(to right bottom, #72424a, #6c3c44, #66363e, #603139, #5a2b33);
+        border-radius: 30px;
+    }
+    
+    
+    .Content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-image: linear-gradient(to left bottom, #fff3f9, #fceaf3, #f9e1ed, #f6d8e7, #f3cfe1);
+        border-radius: 25px;
+        height: 100%;
+    }
+
+    .CardButtons {
+        display: flex;
+        width: 90%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .CardsRowCon {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-evenly;
+    }
+
+    .GameLogoImage {
+        width: 80%;
+        height: auto;
+    }
+
+    .HomaShortText {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+/*Cards Style*/
+.GameCard {
+    width: 40%;
+    height: 220px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.WideCard {
+    width: 45%;
+    height: 200px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.GameCard h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.WideCard h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.GameCardText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 70%;
+    margin-left: 6px;
+}
+
+.GameCardIcon {
+    width: 40%;
+}
+
+.LigGameCard {
+    background-image: url(../Assets/GachaStroyCardBG.png);
+    background-color: #100326;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+    /*border: solid #6eb313 7px;*/
+}
+
+.HrGameCard {
+    background-image: url(../Assets/HoopsRunsCardBG.png);
+    background-color: #100326;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+    /*border: solid #6eb313 7px;*/
+}
+
+.CasualGamesGameCard {
+    background-image: url(../Assets/CasualGamesCardBG.png);
+    background-color: #100326;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+    /*border: solid #6eb313 7px;*/
+}
+
+.GameCard h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+@media (orientation : portrait) {
+    .GameCard {
+        width: 90%;
+        margin: 5px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .WideCard {
+        width: 95%;
+        margin: 5px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 15px;
+    }
+}
+
+
+/*Contact Page*/
+.ContactGtid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+}
+
+.ContactCard {
+    width: 90%;
+    height: 200px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #100326;
+    background-image: url(../Assets/GalaxyCardBG.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -ms-overflow-style: none;
+}
+
+.ContactCard h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.ContactCardImage {
+    height: 30%;
+}
+
+@media (orientation : portrait) {
+    .ContactGtid {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/*404 Page*/
+.Page404 {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Hover Effects*/
+.HoverEffect1 {
+    scale: 1;
+}
+
+.HoverEffect1:hover {
+    scale: 1.1;
+}
+
+.HoverEffect1:active {
+    scale: 0.9;
+}
+
+.HoverEffect2 {
+    opacity: 100%;
+    scale: 1;
+    filter: brightness(1);
+}
+
+.HoverEffect2:hover {
+    opacity: 80%;
+    scale: 0.99;
+
+}
+
+.HoverEffect2:active {
+    scale: 0.8;
+    opacity: 100%;
+    filter: brightness(1.5);
+}
+
+.HoverEffect3 {
+    opacity: 100%;
+    scale: 1;
+    filter: saturate(1);
+    filter: brightness(1);
+}
+
+.HoverEffect3:hover {
+    filter: saturate(1.25);
+    scale: 1.02;
+
+}
+
+.HoverEffect3:active {
+    scale: 0.99;
+    opacity: 80%;
+    filter: brightness(1.05);
+    filter: saturate(1.27);
+}
+
+
+/*Text Sizes*/
+.PageTitleBig {
+    font-size: xx-large;
+    margin-bottom: 0;
+}
+
+.PageTitleSmall {
+    font-size: medium;
+}
+
+
+/*Stars*/
+.Stars {
+    width: 8%;
+    height: auto;
+    animation-name: SatrsPulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.Stars2 {
+    width: 8%;
+    height: auto;
+    animation-name: SatrsPulse2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes SatrsPulse {
+    0% {
+        scale: 1
+    }
+
+    50% {
+        scale: 1.2
+    }
+
+    100% {
+        scale: 1
+    }
+}
+
+@keyframes SatrsPulse2 {
+    0% {
+        scale: 1.2
+    }
+
+    50% {
+        scale: 1
+    }
+
+    100% {
+        scale: 1.2
+    }
+}
+
+.StarLeft {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.StarRight {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@media (orientation : portrait) {
+
+    .StarLeft,
+    .StarRight {
+        display: none;
+    }
+}
+
+
+/*Text Colors*/
+.OtherTextLinksRow{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.OtherTextLink{
+    text-decoration: none;
+    color: #0b3649;
+    margin: 0 10px;
+}
+
+@media (orientation : portrait) {
+    .OtherTextLinksRow{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .OtherTextLink{
+        text-decoration: none;
+        color: #0b3649;
+        margin: 5px 0;
+    }
+}
+
+.LongTextCon{
+    width: 90%;
+    text-align: justify;
+}
+
+.LongTextCon a{
+    color: #1a4e58;
+    text-decoration: underline;
+}
+
+.TextColorLight1 {
+    color: #0a2531;
+}
+
+.TextColorDark1 {
+    color: #5A2B33;
+}
+
+
+
+/*Border Colors*/
+.LightBorder {
+    border: solid #e5e4f7 7px;
+}
+
+.DarkBorder {
+    border: solid #5A2B33 7px;
+}
+
+/*Buttons*/
+.LightButton1 {
+    font-family: "Quicksand", Bold;
+    background-color: #e9e4f7;
+    border: solid #5A2B33 5px;
+    padding: 10px 50px;
+    border-radius: 30px;
+    font-size: x-large;
+    color: #5A2B33;
+    margin: 5px;
+}
+
+.StoreLinkButtonBorder {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 30px;
+}
+
+.StoreLinkButtonBorder::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    bottom: 3px;
+    left: 6px;
+    z-index: -1;
+    background-image: linear-gradient(to right bottom, #f9475e, #ff6940, #fc8e1d, #ebb200, #cdd300, #9ee047, #6ae978, #00eea8, #00d9dd, #00beff, #0099ff, #5f61fb);
+    border-radius: 30px;
+}
+
+.StoreLinkButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Quicksand", Bold;
+    background-color: #f3f7e4;
+    padding: 10px 10px;
+    width: 300px;
+    border-radius: 25px;
+    font-size: x-large;
+    color: #5A2B33;
+    margin: 5px;
+}
+
+.StoreLinkButtonImg{
+    width: 20%;
+}
+
+.StoreLinkButtonText{
+    margin-left: 15px;
+}
+
+@media (orientation : portrait) {
+    .StoreLinkButtonBorder {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0);
+        background-clip: padding-box;
+        border: 3px solid transparent;
+        border-radius: 30px;
+    }
+    
+    .StoreLinkButtonBorder::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 6px;
+        bottom: 3px;
+        left: 6px;
+        z-index: -1;
+        background-image: linear-gradient(to right bottom, #f9475e, #ff6940, #fc8e1d, #ebb200, #cdd300, #9ee047, #6ae978, #00eea8, #00d9dd, #00beff, #0099ff, #5f61fb);
+        border-radius: 30px;
+    }
+    
+    .StoreLinkButton{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: "Quicksand", Bold;
+        background-color: #f3f7e4;
+        padding: 10px 10px;
+        width: 200px;
+        border-radius: 25px;
+        font-size: x-large;
+        color: #5A2B33;
+        margin: 5px;
+    }
+}
+
+
+
+/*Other*/
+.TextAlignCenter {
+    text-align: center;
+}
+
+.ModImageBig {
+    width: 90%;
+    border-radius: 30px;
+}
+
+.hr1 {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: #72424a7b;
+    height: 3px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.hr2 {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: #72424a7b;
+    height: 3px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+
+.Hidden {
+    display: none;
+}
+
+iframe {
+    width: 30%;
+    height: auto;
+    margin: 5px;
+    border-radius: 20px;
+}
